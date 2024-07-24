@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  </head>
+  <body>
+    <nav class="sidebar">
+      <a href="#" class="logo">Restaurant Billing System</a>
+      <hr>
+
+      <div class="menu-content">
+        <ul class="menu-items">
+          <div class="menu-title">Admin</div>
+          <hr>
+
+          <li class="item">
+            <a href="#" onclick="loadPage('category_table.php')">Categories</a>
+          </li>
+          <li class="item">
+            <a href="#" onclick="loadPage('subcategory_table.php')">Sub-Categories</a>
+          </li>
+
+          <li class="item">
+            <a href="#" onclick="loadPage('food_table.php')">Food Items</a>
+          </li>
+
+          <div class="menu-title">Cashier</div>
+          <hr>
+
+          <li class="item">
+            <a href="#" onclick="loadPage('sales_table.php')">Sales</a>
+          </li>
+          <li class="item">
+            <a href="#" onclick="loadPage('salesItems.php')">Sales Items</a>
+          </li>
+        </ul>
+
+      </div>
+
+      
+        
+     
+
+
+    </nav>
+
+    
+
+    <main class="main" id="content">
+      <h1>Restaurant Billing System</h1>
+    </main>
+    <!-- <div class="content" id="content">
+       Content will be loaded here
+    </div> -->
+    <script>
+      function loadPage(page) {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+              if (this.readyState === 4 && this.status === 200) {
+                  document.getElementById("content").innerHTML = this.responseText;
+              }
+          };
+          xhttp.open("GET", page, true);
+          xhttp.send();
+      }
+  </script>
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>
